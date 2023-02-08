@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Exe_3.Entities
 {
-    internal class OrderItem
+    class OrderItem
     {
         public int Quantity { get; set; }
         public double Price { get; set; }
@@ -17,9 +17,9 @@ namespace Exe_3.Entities
             Price = price;
         }
 
-        public double SubTotal(int quantity, double price)
+        public double SubTotal()
         {
-            return quantity * price;
+            return Quantity * Price;
         }
     }
 

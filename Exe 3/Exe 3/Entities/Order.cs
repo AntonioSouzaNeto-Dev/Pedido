@@ -1,6 +1,7 @@
 ﻿using Exe_3.Entities.Enums;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -13,9 +14,9 @@ namespace Exe_3.Entities
         public OrderStatus Status { get; set; }
 
         public List<OrderItem> Items { get; set; } = new List<OrderItem>();
-
+        
         public Client Client { get; set; }
-
+        
         public Order()
         {
         }
@@ -26,13 +27,23 @@ namespace Exe_3.Entities
             Client = client;
         }
 
-        public void addItems(OrderItem items)
+        public void AddItems(OrderItem item)
         {
-            Items.Add(items);
+            Items.Add(item);
         }
-        public void removeItems(OrderItem items)
+        public void RemoveItems(OrderItem item)
         {
-            Items.Remove(items);
+            Items.Remove(item);
+        }
+       
+        public double Total()
+        {
+            double sum = 0;
+            foreach (OrderItem item in Items)
+            {
+                sum += item.SubTotal();
+            }
+            return sum;
         }
     }
 }
