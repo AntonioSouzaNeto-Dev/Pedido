@@ -6,15 +6,17 @@ using System.Threading.Tasks;
 
 namespace Exe_3.Entities
 {
-    class OrderItem
+    internal class OrderItem
     {
         public int Quantity { get; set; }
         public double Price { get; set; }
-
-        public OrderItem(int quantity, double price)
+        public Product Product { get; set; }
+        public OrderItem() { }
+        public OrderItem(int quantity, double price, Product produto)
         {
             Quantity = quantity;
             Price = price;
+            Product = produto;
         }
 
         public double SubTotal()
