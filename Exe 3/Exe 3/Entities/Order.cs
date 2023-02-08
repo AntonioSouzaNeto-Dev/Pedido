@@ -11,10 +11,22 @@ namespace Exe_3.Entities
     {
         public DateTime Moment { get; set; }
         public OrderStatus Status { get; set; }
-    }
 
-    public void AddItem()
-    {
-        
+        public List<OrderItem> orderItems { get; set; } = new List<OrderItem>();
+        public Order()
+        {
+        }
+
+        public Order(DateTime moment, OrderStatus status, List<OrderItem> orderItems)
+        {
+            Moment = moment;
+            Status = status;
+            this.orderItems = orderItems;
+        }
+
+        public void AddItem(Product produtos)
+        {
+           
+        }
     }
 }

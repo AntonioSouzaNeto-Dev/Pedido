@@ -1,2 +1,10 @@
-﻿// See https://aka.ms/new-console-template for more information
-Console.WriteLine("Hello, World!");
+﻿Console.WriteLine("Enter client data: ");
+Console.Write("Name: ");
+string? name = Console.ReadLine();
+Console.Write("Email: ");
+string? email = Console.ReadLine();
+Console.WriteLine("Birth date (DD/MM/YYYY): ");
+DateTime birthDate = DateTime.Parse(Console.ReadLine());
+Console.WriteLine("Enter order data: ");
+Console.WriteLine("Status: " );
+Console.WriteLine("How many items to this order? ");
